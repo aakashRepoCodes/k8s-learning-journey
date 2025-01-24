@@ -1,0 +1,26 @@
+# sample pod file
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+  labels:
+    type: dev
+    usage: test #just to show any key-value pair is supported inside labels
+
+spec:
+  containers:
+    - name: nginx-container # can contain more than 1 container
+      image: nginx
+      ports:
+        - containerPort: 80
+
+
+  # to run this through kubectl
+  # kubectl create -f pod.yaml
+  # kubectl apply -f pod.yaml
+  # kubectl describe pod nginx-pod (for error debugging)
+  # kubectl delete pod podName (for deletion)
+
+
+
